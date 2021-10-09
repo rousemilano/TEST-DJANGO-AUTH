@@ -1,43 +1,45 @@
-# TEST-DJANGO-AUTH
-CONFIGURACIONES E INSTALACIONES PARA USAR EL PROYECTO TEST-DJANGO-AUTH
+# test-django-auth
+**configuraciones e instalaciones para usar el proyecto test-django-auth**
 
-1. RECOMENDACIÓN: PREPARE SU MAQUINA CON UN ENTORNO VIRTUAL EN LA RAIZ DEL PROYECTO QUE CLONÓ EN SU MAQUINA Y EJECUTE LOS SIGUIENTES COMANDOS 
-DESDE SU TERMINAL 
--El comando que yo uso es el siguiente (SI NO LO TIENE INSTALE CON EL SIGUIENTE COMANDO):
+**1. recomendación: prepare su maquina con un entorno virtual en la raiz del proyecto que clonó en su maquina y ejecute los siguientes comandos 
+desde su terminal**
+*-el comando que yo uso es el siguiente (si no lo tiene instale con el siguiente comando):*
 
-->   pip install pipenv
+`pip install pipenv`
 
--para ejecutar la maquina virtual ingrese el siguiente comando en su terminal:
+*-para ejecutar la maquina virtual ingrese el siguiente comando en su terminal:*
 
-->   pipenv shell
+`pipenv shell`
 
-2. PROCEDEMOS A INSTALAR LAS DEPENDENCIAS PARA NUESTRO PROYECTO CON EL SIGUIENTE COMANDO (ASEGURESE DE ESTAR UBICADO EN LA CARPETA QUE CONTIENE 
-EL ARCHIVO -> requirements.txt ):
+**2. procedemos a instalar las dependencias para nuestro proyecto con el siguiente comando (asegurese de estar ubicado en la carpeta que contiene 
+el archivo -> requirements.txt ):**
 
-->   pip install -r requirements.txt
+`pip install -r requirements.txt`
 
-3. PROCEDA A CREAR UNA BASE DE DATOS EN POSTGRESQL O EN EL GESTOR DE BBDD DE SU PREFERENCIA
-(AQUÍ LE DEJO LOS COMANDOS PARA HACERLO DESDE LA TERMINAL CON POSTGRESQL) (TOTALMENTE BÁSICO)
+**3. proceda a crear una base de datos en postgresql o en el gestor de bbdd de su preferencia
+(aquí le dejo los comandos para hacerlo desde la terminal con postgresql) (totalmente básico)**
 
-->   psql postgres
-->   CREATE DATABASE test_auth;
+`psql postgres`
+`create database test_auth;`
 
--comprobamos que podemos conectarnos a la base de datos
-->   \connect test_auth;
+*-comprobamos que podemos conectarnos a la base de datos*
+`\connect test_auth;`
 
-*NOTA: recuerde configurar el settings.py linea 79 aproximadamente -> cambie su contraseña y usuario que usará en su BBDD
+*nota: recuerde configurar el settings.py linea 79 aproximadamente -> cambie su contraseña y usuario que usará en su bbdd*
 
-4. UNA VEZ ESTÉ TODO CONFIGURADO PROCEDA HA REALIZAR LAS MIGRACIONES DE LOS MODELOS A LA BBDD, AQUÍ DEJO LOS COMANDOS:
+**4. una vez esté todo configurado proceda ha realizar las migraciones de los modelos a la bbdd, aquí dejo los comandos:**
 
-->   python3 manage.py makemigrations
-->   python3 manage.py migrate
+`python3 manage.py makemigrations`
+`python3 manage.py migrate`
 
-5. PROCEDA A CREAR UN SUPER USUARIO PARA ACCEDER A EL ADMIN 
-->   python3 manage.py createsuperuser
+**5. proceda a crear un super usuario para acceder a el admin** 
 
-6. PROCEDA A EJECUTAR EL SERVIDOR CON EL SIGUIENTE COMANDO
-->   python3 manage.py runserver
+`python3 manage.py createsuperuser`
 
-*NOTA: puede usar el entorno virtual con el comando de su preferencia, coloque (pipenv) porque es el que usé...
-usé ubunto para la creación de este proyecto.
+**6. proceda a ejecutar el servidor con el siguiente comando**
+
+`python3 manage.py runserver`
+
+*nota: puede usar el entorno virtual con el comando de su preferencia, coloque (pipenv) porque es el que usé...
+usé ubunto para la creación de este proyecto.*
 
