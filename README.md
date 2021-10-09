@@ -27,7 +27,7 @@ el archivo -> requirements.txt ):**
 
 `\connect test_auth;`
 
-*nota: recuerde configurar el settings.py linea 79 aproximadamente -> cambie su contraseña y usuario que usará en su bbdd*
+*nota: recuerde configurar el settings.py linea 79 aproximadamente -> coloque su contraseña y usuario que usará en su bbdd*
 
 **4. una vez esté todo configurado proceda ha realizar las migraciones de los modelos a la bbdd, aquí dejo los comandos:**
 
