@@ -20,17 +20,20 @@ el archivo -> requirements.txt ):**
 (aquí le dejo los comandos para hacerlo desde la terminal con postgresql) (totalmente básico)**
 
 `psql postgres`
+
 `create database test_auth;`
 
 *-comprobamos que podemos conectarnos a la base de datos*
+
 `\connect test_auth;`
 
 *nota: recuerde configurar el settings.py linea 79 aproximadamente -> cambie su contraseña y usuario que usará en su bbdd*
 
 **4. una vez esté todo configurado proceda ha realizar las migraciones de los modelos a la bbdd, aquí dejo los comandos:**
 
-+`python3 manage.py makemigrations`
-+`python3 manage.py migrate`
+`python3 manage.py makemigrations`
+
+`python3 manage.py migrate`
 
 **5. proceda a crear un super usuario para acceder a el admin** 
 
