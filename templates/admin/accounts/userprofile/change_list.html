@@ -1,0 +1,8 @@
+{% extends 'admin/change_list.html' %}
+{% load static %}
+{% block content %}
+<div class="btn_csv">
+  <a href="upload-csv/"> <button onclick="document.getElementById('id01').style.display='block'" class="button">Upload a csv file</button></a>
+</div>
+{{ block.super }}
+{% endblock %}

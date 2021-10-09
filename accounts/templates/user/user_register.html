@@ -1,0 +1,71 @@
+{% extends "base/base.html" %}
+{%load static%}
+{% block title %} Registro del niño {% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<meta http-equiv="REFRESH" content="0;url={%url 'home'%}">
+{% else %}
+    <!-- Do something which you want to do with unauthenticated user -->
+{% block head %}
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="{% static 'accounts/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+  <!-- Main css -->
+  <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+{% endblock %}
+<section class="signup">
+    <div class="container">
+        <div class="signup-content">
+            <div class="signup-form">
+                <h2 class="form-title">Sign up</h2>
+                <form method="POST" class="register-form" id="register-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        {{ form2.first_name }}
+                    </div>
+                    <div class="form-group">
+                        <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        {{ form2.last_name }}
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="zmdi zmdi-email"></i></label>
+                        {{form2.email }}
+                    </div>
+                    <div class="form-group">
+                        <label for="username"><i class="zmdi zmdi-email"></i></label>
+                        {{form2.username }}
+                    </div>
+                    <div class="form-group">
+                        <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                        {{form2.password1 }}
+                    </div>
+                    <div class="form-group">
+                        <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                        {{ form2.password2 }}
+                    </div>
+                    <div class="form-group">
+                        <label for="image"><i class="zmdi zmdi-book-image"></i></label>
+                        {{ form.profile_picture}}
+                    </div>
+                    <div class="form-group">
+                        <label for="phone"><i class="zmdi zmdi-code-smartphone"></i></label>
+                        {{ form.phone_number}}
+                    </div>
+                    <div class="form-group">
+                        {{ form.short_description}}
+                    </div>
+                    <div class="form-group form-button">
+                        <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                    </div>
+            </form>
+            </div>
+            
+        </div>
+    </div>
+</section>
+{% endif %}
+{% block javascript %}
+    <script src="{% static 'accounts/js/main.js' %}"></script>
+{% endblock %}
+{% endblock %}

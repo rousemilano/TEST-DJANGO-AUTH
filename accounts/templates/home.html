@@ -1,0 +1,57 @@
+{% extends "base/base.html" %}
+{%load static%}
+{% block title %} Registro del niño {% endblock %}
+{% block content %}
+{% block head %}
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Krub:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+<!-- Vendor CSS Files -->
+<link href="{% static 'home/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="{% static 'home/assets/css/style.css' %}" rel="stylesheet">
+
+{% endblock %}
+<li class="navbar">
+  {% if user.is_authenticated %}
+  <div class="btn_blue">
+    <div>
+      <a>{{ user.get_username }}</a>
+    </div>
+    <div>
+      <a  class="nav-link" href="{% url 'logout'%}?next={{request.path}}"><button class='btn-get-color'>Salir</button></a>
+    </div>
+  </div>
+  {% else %}
+   <div class="btn_blue"> 
+    <div>
+      <a href="{% url 'login' %}"><button class='btn-get-color'>SIGN UP</button></a>
+    </div>
+    <div>
+      <a href="{% url 'userRegister'%}"><button class='btn-get-color'>REGISTER</button></a>
+    </div>
+   </div>
+  {% endif %}
+</li>
+ <section id="hero" class="d-flex align-items-center">
+    <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
+      <h1>Hola, soy Routhberis Milano</h1>
+      <h2>Soy estudiante de ingeniería en informática con carga acádemica finalizada, 
+          soy Backend Developer, tengo experiencia en Python, Django, Odoo.<br> 
+          Usé plantillas para realizar esté test</h2>
+      <img src="{% static 'home/assets/img/hero-img.png'%}" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
+    </div>
+</section>
+
+{% block javascript %}
+      <!-- Vendor JS Files -->
+    <script src="{% static 'home/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'home/assets/vendor/aos/aos.js'%}"></script>
+    <script src="{% static 'home/assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+    <script src="{% static 'home/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <!-- Template Main JS File -->
+    <script src="{% static 'home/assets/js/main.js' %}"></script>
+
+{% endblock %}
+{% endblock %}

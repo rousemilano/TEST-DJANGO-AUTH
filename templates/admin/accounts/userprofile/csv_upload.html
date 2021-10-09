@@ -1,0 +1,20 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block content %}
+{% block head%}
+<link rel="stylesheet" href="{% static 'accounts/css/style_admin_profileuser.css' %}" >
+{% endblock %}
+<div>
+    <div class="modal">
+        <form class="modal-content" action="" method="POST" enctype="multipart/form-data">
+          <div class="container">
+            <h1>Upload CSV</h1>
+              {% csrf_token %}
+              {{form.as_p}}   
+              <a href="/admin/accounts/userprofile/">Cancel</a>
+              <button type="submit"class="button">Upload File</button>
+          </div>
+        </form>
+    </div> 
+</div>
+{% endblock %}

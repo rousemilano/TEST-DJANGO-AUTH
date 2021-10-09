@@ -1,0 +1,64 @@
+{% extends "base/base.html" %}
+{%load static%}
+{% block title %} Login {% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<meta http-equiv="REFRESH" content="0;url={%url 'home'%}">
+{% else %}
+{% load crispy_forms_tags %}
+{% block head %}
+  <!-- Font Icon -->
+  <link rel="stylesheet" href="{% static 'accounts/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
+  <!-- Main css -->
+  <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+{% endblock %}
+
+<section class="sign-in">
+    <div class="container">
+        <div class="container-alert">
+            {% if form.errors %}
+                <div class="alert alert-danger">Your username and password didn't match. Please try again.</div>
+            {% endif %}
+
+            {% if next %}
+                {% if user.is_authenticated %}
+                    <p>Your account doesn't have access to this page. To proceed,
+                        please login with an account that has access.</p>
+                {% else %}
+                    <p>Please login to see this page.</p>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="signin-content">
+            
+            <div class="signin-image">
+                <figure><img src="{%static 'accounts/images/signin-image.jpg'%}" alt="sing up image"></figure>
+                <a href="{%url 'userRegister'%}" class="signup-image-link">Create an account</a>
+            </div>
+            <div class="signin-form">
+                <h2 class="form-title">Sign up</h2>
+                <form method="post" class="register-form" id="login-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="Username"><i class="zmdi zmdi-account material-icons-name"></i>Username</label>
+                        <br>
+                        <br>
+                        {{form.username}}
+                    </div>
+                    <div class="form-group">
+                        <label for="pass"><i class="zmdi zmdi-lock"></i> Password</label>
+                        <br>
+                        <br>
+                        {{form.password}}
+                    </div> 
+                    <div class="form-group form-button">
+                        <button type="submit" class="form-submit" >Log in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{%endif%}
+{% endblock %}
