@@ -29,8 +29,8 @@ el archivo -> requirements.txt ):**
 
 **4. una vez esté todo configurado proceda ha realizar las migraciones de los modelos a la bbdd, aquí dejo los comandos:**
 
-`python3 manage.py makemigrations`
-`python3 manage.py migrate`
++`python3 manage.py makemigrations`
++`python3 manage.py migrate`
 
 **5. proceda a crear un super usuario para acceder a el admin** 
 
